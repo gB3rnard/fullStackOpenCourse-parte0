@@ -1,0 +1,18 @@
+sequenceDiagram
+Usuario->>Navegador: escritura en formulario
+Note over Navegador: input de texto en formulario 
+Navegador->>Servidor:envio de datos mediante boton save
+Note right of Servidor: submit new note
+Navegador->>+Servidor: HTTP POST https://fullstack-exampleapp.herokuapp.com/new_note
+Note right of Servidor: form data is sent with HTTP POST 
+Servidor-->>-Navegador: Status Code 302 Found
+Navegador->>Servidor: HTTP GET https://fullstack-exampleapp.herokuapp.com/notes
+Navegador->>+Servidor: HTTP GET https://fullstack-exampleapp.herokuapp.com/main.css
+Servidor-->>-Navegador: archivo main.css
+Navegador->>+Servidor: HTTP GET https://fullstack-exampleapp.herokuapp.com/main.js
+Servidor-->>-Navegador: archivo main.js
+Navegador->>+Servidor: HTTP GET https://fullstack-exampleapp.herokuapp.com/data.json
+Servidor-->>-Navegador: data.json
+Note right of Servidor: New Note created
+Servidor-->>Navegador: document
+Note over Navegador: browser displays a page with the new note included

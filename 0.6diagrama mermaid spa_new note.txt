@@ -1,0 +1,11 @@
+sequenceDiagram
+Usuario->>Navegador: escritura en formulario
+Note over Navegador: input de texto en formulario 
+Navegador->>Servidor:envio de datos mediante boton save
+Note right of Servidor: submit new note
+Navegador->>+Servidor: HTTP POST https://fullstack-exampleapp.herokuapp.com/new_note_spa
+Note right of Servidor: form data is sent as JSON 
+Servidor-->>-Navegador: Status Code 201
+Note right of Servidor: New Note created
+Servidor-->>Navegador: document
+Note over Navegador: browser displays a page with the new note included

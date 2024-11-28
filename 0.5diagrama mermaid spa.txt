@@ -1,0 +1,10 @@
+sequenceDiagram
+Navegador->>Servidor:HTTP GET https://studies.cs.helsinki.fi/exampleapp/spa
+Navegador->>+Servidor: HTTP GET https://studies.cs.helsinki.fi/exampleapp/data.json
+Servidor-->>-Navegador: data.json
+Navegador->>+Servidor: HTTP GET https://studies.cs.helsinki.fi/exampleapp/spa.js
+Servidor-->>-Navegador: spa.js
+Navegador->>+Servidor: HTTP GET https://studies.cs.helsinki.fi/exampleapp/main.css
+Servidor-->>-Navegador: main.css
+Servidor-->>Navegador: document
+Note over Navegador: browser displays the spa
